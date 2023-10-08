@@ -18,7 +18,15 @@ public class SupermarketApp {
         check = kiosk.addProduct(new Product(5000, "Book", 2));
         System.out.println(check);
         kiosk.printAllProducts();
+        System.out.println("=====================");
         Product product = kiosk.findProduct(2000);
         System.out.println(product);
+        System.out.println("=====================");
+        kiosk.updateProduct(1000, 38);
+        kiosk.printAllProducts();
+        System.out.println("=====================");
+        kiosk.removeProduct(4000);
+        kiosk.printAllProducts();
+
     }
 }

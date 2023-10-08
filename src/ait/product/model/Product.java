@@ -50,4 +50,5 @@ public class Product {
     public int hashCode() {
         return (int) (barcode ^ (barcode >>> 32));
     }
+
 }

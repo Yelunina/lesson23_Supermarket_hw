@@ -29,12 +29,19 @@ public class Supermarket {
     }
 
     public Product updateProduct(long barcode, double price) {
-        // TODO update product price
+        findProduct(barcode).setPrice(price);
         return null;
     }
 
     public boolean removeProduct(long barCode) {
-        // TODO remove product
+        for (int i = 0; i < quantity; i++) {
+            if (products[i].getBarcode() == barCode) {
+                products[i] = products[quantity - i];
+                products[quantity - i] = null;
+                quantity--;
+                break;
+            }
+        }
         return false;
     }
 
