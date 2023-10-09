@@ -22,10 +22,10 @@ public class SupermarketApp {
         Product product = kiosk.findProduct(2000);
         System.out.println(product);
         System.out.println("=====================");
-        kiosk.updateProduct(1000, 38);
+        kiosk.updateProduct(2000, 77);
         kiosk.printAllProducts();
         System.out.println("=====================");
-        kiosk.removeProduct(4000);
+        kiosk.removeProduct(1000);
         kiosk.printAllProducts();
 
     }

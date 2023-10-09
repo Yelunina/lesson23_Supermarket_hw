@@ -29,17 +29,20 @@ public class Supermarket {
     }
 
     public Product updateProduct(long barcode, double price) {
-        findProduct(barcode).setPrice(price);
-        return null;
+        Product product = findProduct(barcode);
+        if (product != null) {
+            product.setPrice(price);
+        }
+        return product;
     }
 
     public boolean removeProduct(long barCode) {
-        for (int i = 0; i < quantity; i++) {
-            if (products[i].getBarcode() == barCode) {
-                products[i] = products[quantity - i];
-                products[quantity - i] = null;
+        for (int i = 0; i < products.length; i++) {
+            if (products[i] != null && products[i].getBarcode() == barCode) {
+                products[i] = products[quantity - 1];
+                products[quantity - 1] = null;
                 quantity--;
-                break;
+                return true;
             }
         }
         return false;
